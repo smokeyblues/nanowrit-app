@@ -1,8 +1,17 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Cinzel_Decorative } from "next/font/google";
+import { ThemeProvider } from "@/components/theme-provider";
+import { NavBar } from "@/components/navBar";
+
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
+
+const cinzelDecorative = Cinzel_Decorative({
+  weight: ['700'],
+  subsets: ["latin"],
+  variable: '--font-cinzel-decorative',
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +25,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${inter.className}`}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <NavBar />
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
