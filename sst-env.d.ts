@@ -7,6 +7,14 @@ declare module "sst" {
       type: "sst.aws.Nextjs"
       url: string
     }
+    Premise: {
+      name: string
+      type: "sst.aws.Bucket"
+    }
+    Premises: {
+      name: string
+      type: "sst.aws.Dynamo"
+    }
   }
 }
 export {}
