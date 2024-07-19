@@ -11,6 +11,10 @@ declare module "sst" {
       name: string
       type: "sst.aws.Bucket"
     }
+    PremiseApi: {
+      type: "sst.aws.ApiGatewayV1"
+      url: string
+    }
     Premises: {
       name: string
       type: "sst.aws.Dynamo"
